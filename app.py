@@ -52,9 +52,9 @@ text = st.text_input(label="Please enter your text here to predict the sentiment
 
 st.write("")
 
-inputs = {"tweet": text}
+# inputs = {"tweet": text}
 
 if st.button('Predict'):
     # res = requests.post(url = "https://katrinmisel-sentimentapp-app-uylw02.streamlitapp.com/predict_sentiment", data = json.dumps(inputs))
-    res = predict_sentiment(inputs.tweet)
-    st.subheader(f"Sentiment = {res.text}")
+    res = predict_sentiment(text)
+    st.subheader(f"Sentiment = res")
