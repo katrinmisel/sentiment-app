@@ -27,10 +27,10 @@ def predict_sentiment(tweet):
 
     if prediction>0.45: 
         sentiment = 'Positive'
-        face = :slightly_smiling_face:
+        face = ":slightly_smiling_face:"
     else: 
         sentiment = 'Negative'
-        face = 	:slightly_frowning_face:
+        face = ":slightly_frowning_face:"
 
     return sentiment, face
 
