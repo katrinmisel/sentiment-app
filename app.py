@@ -46,6 +46,6 @@ st.write("")
 # inputs = {"tweet": text}
 
 if st.button('Predict'):
-    st.subheader(f"Your text:  \"{text} \"")
+    st.subheader(f"Text: \"{text}\"")
     sentiment, face = predict_sentiment(text)
     st.subheader(f"Sentiment prediction: {sentiment} {face}")
