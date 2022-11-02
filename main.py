@@ -1,10 +1,30 @@
-from fastapi import FastAPI
+import pandas as pd
+import pickle
+from fastapi import FastAPI, Request
 
-app = FastAPI()
+api = FastAPI()
 
-#domain where this api is hosted for example : localhost:5000/docs to see swagger documentation automagically generated.
+#model_filename = "perf_advanced_tweetprep_glove.h5"
+#tokenizer_filename = "keras_tokenizer.pickle"
 
+#model = load_model(model_filename)
+
+#with open(tokenizer_filename,'rb') as handle:
+#  keras_tokenizer = pickle.load(handle)
 
 @app.get("/")
-def home():
-    return {"message":"Hello TutLinks.com"}
+
+def root():
+	return {'message': 'Hello friends!'}
+
+#@api.post('/predict')
+
+#async def predict(iris: Iris):
+	
+	# Converting input data into Pandas DataFrame
+	#input_df = pd.DataFrame([iris.dict()])
+	
+	# Getting the prediction from the Logistic Regression model
+	#pred = lr_model.predict(input_df)[0]
+	
+	#return pred
