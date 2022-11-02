@@ -1,7 +1,5 @@
 ###### import libraries
 
-from fastapi import FastAPI
-from pydantic import BaseModel
 from keras.utils import pad_sequences
 import preprocessor as p
 import pickle
@@ -27,26 +25,19 @@ def predict_sentiment(tweet):
 
     prediction = model.predict(pad_tweet)
 
-    if prediction>0.45: sentiment = 'Positive'
-    else: sentiment = 'Negative'
+    if prediction>0.45: 
+        sentiment = 'Positive'
+        face = :slightly_smiling_face:
+    else: 
+        sentiment = 'Negative'
+        face = 	:slightly_frowning_face:
 
-    return sentiment
+    return sentiment, face
 
-###### set up fastapi
-
-class User_input(BaseModel):
-    tweet : str
-
-app = FastAPI()
-
-@app.post('/predict_sentiment')
-def operate(input:User_input):
-    result = predict_sentiment(input.tweet)
-    return result
 
 ###### set up streamlit
 
-st.title("Sentiment prediction")
+st.title("Sentiment prediction :robot_face:")
 
 text = st.text_input(label="Please enter your text here to predict the sentiment")
 
@@ -55,6 +46,6 @@ st.write("")
 # inputs = {"tweet": text}
 
 if st.button('Predict'):
-    # res = requests.post(url = "https://katrinmisel-sentimentapp-app-uylw02.streamlitapp.com/predict_sentiment", data = json.dumps(inputs))
-    res = predict_sentiment(text)
-    st.subheader(f"Sentiment = {res}")
+    st.write("Your text: {text}")
+    sentiment, face = predict_sentiment(text)
+    st.subheader(f"Sentiment prediction: {sentiment} {face}")
