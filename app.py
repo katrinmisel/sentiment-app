@@ -39,13 +39,11 @@ def predict_sentiment(tweet):
 
 st.title("Sentiment prediction :robot_face:")
 
-text = st.text_input(label="Please enter your text here to predict the sentiment")
+text = st.text_input(label="Please enter your text here and click \"Predict\"")
 
 st.write("")
 
-# inputs = {"tweet": text}
-
 if st.button('Predict'):
-    st.subheader(f"Text: \"{text}\"")
+    st.write(f"Text: \"{text}\"")
     sentiment, face = predict_sentiment(text)
-    st.subheader(f"Sentiment prediction: {sentiment} {face}")
+    st.write(f"Sentiment prediction: {sentiment} {face}")
