@@ -55,6 +55,6 @@ st.write("")
 inputs = {"tweet": text}
 
 if st.button('Predict'):
-    res = requests.post(url = "https://katrinmisel-sentimentapp-app-uylw02.streamlitapp.com/predict_sentiment", data = json.dumps(inputs))
-
-    st.subheader(f"Response from API = {res.text}")
+    # res = requests.post(url = "https://katrinmisel-sentimentapp-app-uylw02.streamlitapp.com/predict_sentiment", data = json.dumps(inputs))
+    res = predict_sentiment(input.tweet)
+    st.subheader(f"Sentiment = {res.text}")
