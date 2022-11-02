@@ -9,3 +9,4 @@ streamlit==1.14.0
 tensorflow==2.10.0
 tweet-preprocessor==0.6.0
 uvicorn==0.19.0
+fastapi==0.85.2
