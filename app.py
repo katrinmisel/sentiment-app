@@ -44,6 +44,6 @@ text = st.text_input(label="Please enter your text here and click \"Predict\"")
 st.write("")
 
 if st.button('Predict'):
-    st.write(f"Text: \"{text}\"")
+    st.subheader(f"Text: \"{text}\"")
     sentiment, face = predict_sentiment(text)
-    st.write(f"Sentiment prediction: {sentiment} {face}")
+    st.subheader(f"Sentiment prediction: {sentiment} {face}")
